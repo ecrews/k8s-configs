@@ -5,7 +5,7 @@ image:
   repository:
     geojs: ericcrews/geojs
     main: ericcrews/weather
-    openweather: ericcrews/openweather
+    openweather: ericcrews/openweathermap
   tag: 564f1cd
 
 imagePullSecrets: []
