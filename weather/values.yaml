@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   pullPolicy: IfNotPresent
-  repository: ericcrews/weather
+  repository:
     geojs: ericcrews/geojs
     main: ericcrews/weather
     openweather: ericcrews/openweather
