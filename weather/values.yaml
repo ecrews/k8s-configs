@@ -3,7 +3,10 @@ replicaCount: 1
 image:
   pullPolicy: IfNotPresent
   repository: ericcrews/weather
-  tag: 4b6c94c2
+    geojs: ericcrews/geojs
+    main: ericcrews/weather
+    openweather: ericcrews/openweather
+  tag: 7e3aa34e
 
 imagePullSecrets: []
 nameOverride: ""
