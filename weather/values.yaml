@@ -29,7 +29,7 @@ ingress:
   hosts:
     - host: ecrews.dev
       paths:
-        - /
+        - /weather
   tls:
     - secretName: ecrews-tls
       hosts:
