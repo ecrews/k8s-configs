@@ -25,7 +25,7 @@ spec:
         - name: {{ .Chart.Name }}-main
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.main.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository.main }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -44,7 +44,7 @@ spec:
         - name: {{ .Chart.Name }}-geojs
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.geojs.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository.geojs }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -63,7 +63,7 @@ spec:
         - name: {{ .Chart.Name }}-openweathermap
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.openweathermap.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository.openweathermap }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
