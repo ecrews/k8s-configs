@@ -1,0 +1,44 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name:
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - host: ecrews.dev
+      paths:
+        - /
+  tls:
+    - secretName: ecrews-tls
+      hosts:
+        - ecrews.dev
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
