@@ -11,5 +11,6 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+  externalTrafficPolicy: Local
   selector:
     {{- include "weather.selectorLabels" . | nindent 4 }}

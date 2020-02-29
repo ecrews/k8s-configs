@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: nginx-ingress-controller
 data:
-  use-proxy-protocol: "true"
+  use-forwarded-headers: "true"
