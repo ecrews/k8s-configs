@@ -26,11 +26,11 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
     - host: ecrews.dev
       paths:
-        - /weather(/|$)(.*)
+        - /weather
   tls:
     - secretName: ecrews-tls
       hosts:
