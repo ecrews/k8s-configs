@@ -1,12 +1,28 @@
 replicaCount: 1
 
-image:
-  pullPolicy: IfNotPresent
-  repository:
-    geojs: ericcrews/geojs
-    main: ericcrews/weather
-    openweathermap: ericcrews/openweathermap
-  tag: "1380c6b"
+main:
+  image:
+    pullPolicy: IfNotPresent
+    repository: "ericcrews/weather"
+    tag: "fb0f2d8"
+  env:
+    geojs_service_host: "http://localhost:4040"
+    openweathermap_service_host: "http://localhost:5050"
+  containerPort: 3030
+
+geojs:
+  image:
+    pullPolicy: IfNotPresent
+    repository: "ericcrews/geojs"
+    tag: "fb0f2d8"
+  containerPort: 4040
+
+openweathermap:
+  image:
+    pullPolicy: IfNotPresent
+    repository: "ericcrews/openweathermap"
+    tag: "fb0f2d8"
+  containerPort: 5050
 
 imagePullSecrets: []
 nameOverride: ""
