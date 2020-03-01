@@ -6,7 +6,7 @@ image:
     geojs: ericcrews/geojs
     main: ericcrews/weather
     openweathermap: ericcrews/openweathermap
-  tag: "a6c1ec4"
+  tag: "e960478"
 
 imagePullSecrets: []
 nameOverride: ""
