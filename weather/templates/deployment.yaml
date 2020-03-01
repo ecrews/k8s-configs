@@ -65,6 +65,12 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository.openweathermap }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: api-key
+                  name: openweathermap
           ports:
             - name: http
               containerPort: 5050
