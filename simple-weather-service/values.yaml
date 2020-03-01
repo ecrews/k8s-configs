@@ -8,21 +8,21 @@ main:
   image:
     pullPolicy: IfNotPresent
     repository: "ericcrews/weather"
-    tag: "516c41f"
+    tag: "648b97e"
 
 geojs:
   containerPort: 4040
   image:
     pullPolicy: IfNotPresent
     repository: "ericcrews/geojs"
-    tag: "516c41f"
+    tag: "648b97e"
 
 openweathermap:
   containerPort: 5050
   image:
     pullPolicy: IfNotPresent
     repository: "ericcrews/openweathermap"
-    tag: "516c41f"
+    tag: "648b97e"
 
 imagePullSecrets: []
 nameOverride: ""
