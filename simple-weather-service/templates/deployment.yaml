@@ -33,7 +33,7 @@ spec:
           - name: OPENWEATHERMAP_SERVICE_HOST
             value: {{ .Values.main.env.openweathermap_service_host | quote }}
           - name: PORT
-            value: {{ .Values.main.containerPort }}
+            value: {{ .Values.main.containerPort | quote }}
           ports:
             - name: http
               containerPort: {{ .Values.main.containerPort }}
@@ -55,7 +55,7 @@ spec:
           imagePullPolicy: {{ .Values.geojs.image.pullPolicy }}
           env:
           - name: PORT
-            value: {{ .Values.geojs.containerPort }}
+            value: {{ .Values.geojs.containerPort | quote }}
           ports:
             - name: http
               containerPort: {{ .Values.geojs.containerPort }}
@@ -82,7 +82,7 @@ spec:
                 key: api-key
                 name: openweathermap
           - name: PORT
-            value: {{ .Values.openweathermap.containerPort }}
+            value: {{ .Values.openweathermap.containerPort | quote }}
           ports:
             - name: http
               containerPort: {{ .Values.openweathermap.containerPort }}

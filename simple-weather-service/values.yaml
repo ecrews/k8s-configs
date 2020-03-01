@@ -1,7 +1,7 @@
 replicaCount: 1
 
 main:
-  containerPort: "3030"
+  containerPort: 3030
   env:
     geojs_service_host: "http://localhost:4040"
     openweathermap_service_host: "http://localhost:5050"
@@ -11,14 +11,14 @@ main:
     tag: "fb0f2d8"
 
 geojs:
-  containerPort: "4040"
+  containerPort: 4040
   image:
     pullPolicy: IfNotPresent
     repository: "ericcrews/geojs"
     tag: "fb0f2d8"
 
 openweathermap:
-  containerPort: "5050"
+  containerPort: 5050
   image:
     pullPolicy: IfNotPresent
     repository: "ericcrews/openweathermap"
