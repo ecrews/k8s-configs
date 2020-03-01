@@ -25,7 +25,7 @@ spec:
         - name: {{ .Chart.Name }}-main
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository.main }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.main.image.repository }}:{{ .Values.main.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: GEOJS_SERVICE_HOST
