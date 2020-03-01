@@ -26,7 +26,7 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.main.image.repository }}:{{ .Values.main.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.main.image.pullPolicy }}
           env:
           - name: GEOJS_SERVICE_HOST
             value: {{ .Values.main.env.geojs_service_host | quote }}
@@ -52,7 +52,7 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.geojs.image.repository }}:{{ .Values.geojs.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.geojs.image.pullPolicy }}
 					env:
           - name: PORT
             value: {{ .Values.geojs.containerPort }}
@@ -74,7 +74,7 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.openweathermap.image.repository }}:{{ .Values.openweathermap.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.openweathermap.image.pullPolicy }}
           env:
           - name: API_KEY
             valueFrom:
