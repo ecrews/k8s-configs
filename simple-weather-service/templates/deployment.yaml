@@ -53,7 +53,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.geojs.image.repository }}:{{ .Values.geojs.image.tag }}"
           imagePullPolicy: {{ .Values.geojs.image.pullPolicy }}
-					env:
+          env:
           - name: PORT
             value: {{ .Values.geojs.containerPort }}
           ports:
